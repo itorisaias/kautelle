@@ -4,82 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora - A</title>
+    <title>?</title>
+    <style>
+      body {
+        background-color: red;
+        text-align: center;
+      }
+
+      .btn {
+        padding: 5px;
+        border: 1px solid white;
+        background-color: red;
+        border-radius: 5px;
+        color: white;
+      }
+
+      #btn-no {
+        margin: 20px;
+      }
+    </style>
   </head>
   <body>
-    <script>
-      do {
-        var valor = parseFloat(prompt("Digite o valor:"));
-        var parcelas = parseInt(prompt("Digite o numero parcelas:"));
-        var resultado;
+    <h1>Cuzinho hoje ?</h1>
 
-        if (parcelas >= 12) {
-          // SE (parcelas menor igual 12) => 5%
-          resultado = valor * parcelas * 1.05;
-        }
-
-        if (parcelas > 12 && parcelas <= 24) {
-          // SE (parcelas maior que 12 E menor igual que 24) => 10%
-          resultado = valor * parcelas * 1.1;
-        }
-
-        if (parcelas > 24 && parcelas <= 64) {
-          // SE (parcelas maior que 24 E menor igual que 64) => 15%
-          resultado = valor * parcelas * 1.15;
-        }
-
-        if (parcelas > 64) {
-          // SE (parcelas maior 64) => 20%
-          resultado = valor * parcelas * 1.2;
-        }
-
-        alert("Resultado é " + resultado);
-      } while (confirm("Deseja continuar"));
-
-      do {
-        var valor = parseFloat(prompt("Digite o valor:"));
-        var parcelas = parseInt(prompt("Digite o numero parcelas:"));
-        var resultado;
-
-        if (parcelas >= 12) {
-          // SE (parcelas menor igual 12) => 5%
-          resultado = valor * parcelas * 1.05;
-        } else if (parcelas < 12 && parcelas >= 24) {
-          // SE (parcelas maior que 12 E menor igual que 24) => 10%
-          resultado = valor * parcelas * 1.1;
-        } else if (parcelas < 24 && parcelas >= 64) {
-          // SE (parcelas maior que 24 E menor igual que 64) => 15%
-          resultado = valor * parcelas * 1.15;
-        } else {
-          // SE (parcelas maior 64) => 20%
-          resultado = valor * parcelas * 1.2;
-        }
-
-        alert("Resultado é " + resultado);
-      } while (confirm("Deseja continuar"));
-
-      do {
-        var valor = parseFloat(prompt("Digite o valor:"));
-        var parcelas = parseInt(prompt("Digite o numero parcelas:"));
-        var resultado;
-
-        switch (true) {
-          case parcelas >= 12:
-            resultado = valor * parcelas * 1.05;
-            break;
-          case parcelas < 12 && parcelas >= 24:
-            resultado = valor * parcelas * 1.1;
-            break;
-          case parcelas < 24 && parcelas >= 64:
-            resultado = valor * parcelas * 1.15;
-            break;
-          default:
-            resultado = valor * parcelas * 1.2;
-            break;
-        }
-
-        alert("Resultado é " + resultado);
-      } while (confirm("Deseja continuar"));
-    </script>
+    <button id="btn-yes" class="btn">Sim</button>
+    <button id="btn-no" class="btn">Não</button>
   </body>
+
+  <script>
+    document.getElementById('btn-no').addEventListener('mouseenter', () => {
+      document.getElementById('btn-no').style.position = 'absolute'
+      document.getElementById('btn-no').style.bottom = `${Math.floor(Math.random() * window.innerHeight)}px`
+      document.getElementById('btn-no').style.left = `${Math.floor(Math.random() * window.innerWidth)}px`
+    })
+
+    document.getElementById('btn-yes').addEventListener('click', () => {
+      window.location = 'https://www.youtube.com/watch?v=orWnzqBA63w'
+    })
+  </script>
 </html>
